@@ -21,7 +21,7 @@ class Dict(dict):
     >>> d2.empty
     Traceback (most recent all last):
         ...
-    AttributeError: 'Dict' object has no attribute 'emptu'
+    AttributeError: 'Dict' object has no attribute 'empty'
     '''
 
     def __init__(self,**kw):
@@ -30,4 +30,11 @@ class Dict(dict):
     def __getattr__(self, key):
         try:
             return self[key]
-        
+        except KeyError:
+            raise  AttributeError(r"'Dict' object has no attribute '%s'" % key)
+
+    def __setattr__(self, key, value):
+        self[key] = value
+if __name__ == '__main__':
+    import  doctest
+    doctest.testmod()
