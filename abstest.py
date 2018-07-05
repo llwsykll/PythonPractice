@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import poolTest
 def my_abs(x):
 	if not isinstance(x,(int,float)):
 		raise TypeError('bad operand type')

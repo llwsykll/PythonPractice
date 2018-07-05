@@ -5,7 +5,7 @@ class Screen(object):
     def width(self):
     	return self._width
 
-    @withd.setter
+    @width.setter
     def width(self,width):
     	if not isinstance(width,int):
     		raise ValueError('score must be an integer')
